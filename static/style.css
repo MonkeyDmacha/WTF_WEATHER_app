@@ -84,3 +84,53 @@ button:hover {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
 }
+
+
+/* 💻 Main styles - keep everything else as is above */
+
+@media (max-width: 768px) {
+    .wtf-line {
+        font-size: 32px;
+        line-height: 1.2;
+    }
+
+    .highlight {
+        font-size: 40px;
+    }
+
+    input[type="text"] {
+        width: 80%;
+        font-size: 16px;
+    }
+
+    button {
+        margin-top: 10px;
+        width: 60%;
+        font-size: 16px;
+    }
+
+    .weather-data {
+        width: 90%;
+        font-size: 16px;
+        padding: 15px;
+    }
+
+    .weather-data h2 {
+        font-size: 22px;
+    }
+
+    .weather-data p {
+        font-size: 16px;
+    }
+
+    img {
+        max-width: 100px;
+        height: auto;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
