@@ -1,0 +1,86 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to right, #1f1c2c, #928dab);
+    color: #ffffff;
+    height: 100vh;
+    margin: 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 60px;
+}
+
+/* WTF heading with colored initials */
+.wtf-line {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 48px;
+    letter-spacing: 3px;
+    margin-bottom: 30px;
+}
+
+.highlight {
+    font-size: 60px;
+    font-weight: 900;
+}
+
+.highlight.w { color: #8e2de2; }
+.highlight.t { color: #2980b9; }
+.highlight.f { color: #ff0077; }
+
+form {
+    margin-top: 10px;
+}
+
+input[type="text"] {
+    padding: 10px;
+    width: 260px;
+    border-radius: 8px;
+    border: none;
+    font-size: 16px;
+    background-color: rgba(255, 255, 255, 0.15);
+    color: white;
+    outline: none;
+    backdrop-filter: blur(4px);
+}
+
+button {
+    padding: 10px 20px;
+    margin-left: 10px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    backdrop-filter: blur(4px);
+}
+
+button:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.weather-data {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.35);
+    border-radius: 10px;
+    backdrop-filter: blur(6px);
+    display: inline-block;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.weather-data h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.weather-data p {
+    font-size: 20px;
+    margin: 5px 0;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}

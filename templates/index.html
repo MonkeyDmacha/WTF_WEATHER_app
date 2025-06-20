@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WTF - Weather Tracking Forecast</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <h1 class="wtf-line" title="Weather Tracking Forecast">
+        <span class="highlight w">W</span>eather 
+        <span class="highlight t">T</span>racking 
+        <span class="highlight f">F</span>orecast
+    </h1>
+
+    <form method="POST">
+        <input type="text" name="city" placeholder="Enter city" required>
+        <button type="submit">Get Weather</button>
+    </form>
+
+    {% if weather %}
+        <div class="weather-data">
+            <h2>{{ weather.city }}</h2>
+            <p>{{ weather.description | title }}</p>
+            <p><strong>{{ weather.temperature }}°C</strong></p>
+            <img src="http://openweathermap.org/img/wn/{{ weather.icon }}@2x.png" alt="weather icon">
+        </div>
+    {% endif %}
+
+</body>
+</html>
