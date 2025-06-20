@@ -3,24 +3,34 @@ import requests
 
 app = Flask(__name__)
 
-@app.route('/', methods=['GET', 'POST'])
+API_KEY = "eb3b653b9b7528d7fc5979e4934e1f42"
+
+@app.route("/", methods=["GET", "POST"])
 def index():
     weather = None
-    if request.method == 'POST':
-        city = request.form['city']
-        api_key = 'eb3b653b9b7528d7fc5979e4934e1f42'
-        url = f"https://api.openweathermap.org/data/2.5/weather?q={city}&appid={api_key}&units=metric"
+    error = None
+
+    if request.method == "POST":
+        city = request.form["city"].strip()
+        url = f"https://api.openweathermap.org/data/2.5/weather?q={city}&appid={API_KEY}&units=metric"
         response = requests.get(url)
-        if response.ok:
+        
+        if response.status_code == 200:
             data = response.json()
-            weather = {
-                'city': data['name'],
-                'temperature': data['main']['temp'],
-                'description': data['weather'][0]['description'],
-                'icon': data['weather'][0]['icon']
-            }
+            if "main" in data:
+                weather = {
+                    "city": data["name"],
+                    "temperature": data["main"]["temp"],
+                    "description": data["weather"][0]["description"],
+                    "icon": data["weather"][0]["icon"],
+                }
+            else:
+                error = f"No weather data found for '{city}'."
         else:
-            weather = {'error': 'City not found.'}
-    return render_template('index.html', weather=weather)
+            error = f"City '{city}' not found."
+
+    return render_template("index.html", weather=weather, error=error)
+
 if __name__ == "__main__":
     app.run(debug=True)
+

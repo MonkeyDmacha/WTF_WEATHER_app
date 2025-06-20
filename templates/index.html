@@ -19,6 +19,7 @@
         <button type="submit">Get Weather</button>
     </form>
 
+
     {% if weather %}
         <div class="weather-data">
             <h2>{{ weather.city }}</h2>
@@ -27,6 +28,11 @@
             <img src="http://openweathermap.org/img/wn/{{ weather.icon }}@2x.png" alt="weather icon">
         </div>
     {% endif %}
+
+    {% if error %}
+    <p style="color: red; font-weight: bold;">{{ error }}</p>
+    {% endif %}
+
 
 </body>
 </html>
