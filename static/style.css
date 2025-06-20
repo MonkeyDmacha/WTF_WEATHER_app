@@ -89,43 +89,48 @@ button:hover {
 /* 💻 Main styles - keep everything else as is above */
 
 @media (max-width: 768px) {
+    body {
+        padding-top: 20px;
+    }
+
     .wtf-line {
-        font-size: 32px;
+        font-size: 40px;
         line-height: 1.2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .highlight {
-        font-size: 40px;
+        font-size: 52px;
     }
 
     input[type="text"] {
-        width: 80%;
-        font-size: 16px;
+        width: 85%;
+        font-size: 18px;
+        padding: 12px;
+        margin-bottom: 10px;
     }
 
     button {
-        margin-top: 10px;
         width: 60%;
-        font-size: 16px;
+        font-size: 18px;
+        padding: 12px;
+        margin-top: 5px;
     }
 
     .weather-data {
         width: 90%;
-        font-size: 16px;
-        padding: 15px;
+        font-size: 18px;
+        padding: 20px;
     }
 
     .weather-data h2 {
-        font-size: 22px;
+        font-size: 24px;
     }
 
     .weather-data p {
-        font-size: 16px;
-    }
-
-    img {
-        max-width: 100px;
-        height: auto;
+        font-size: 18px;
     }
 
     form {
@@ -133,4 +138,10 @@ button:hover {
         flex-direction: column;
         align-items: center;
     }
+
+    img {
+        max-width: 100px;
+        height: auto;
+    }
 }
+
